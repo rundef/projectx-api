@@ -29,7 +29,7 @@ from projectx_api import ProjectXClient, Environment, LoginKeyCredentials, Order
 
 async def main():
     client = ProjectXClient(Environment.TOPSTEP_X)
-    await client.authenticate(
+    await client.login(
         LoginKeyCredentials(userName="test", apiKey="test")
     )
     
@@ -60,13 +60,15 @@ async def main():
     
     result = await client.cancel_order(accountId=accountId, orderId=orderId)
     print("Cancel Order", result)
+    
+    await client.logout()
 
 asyncio.run(main())
 ```
 
 ## 🌍 Supported Environments
 
-link to enums.py
+[You can see the supported environments here](https://github.com/rundef/projectx-api/blob/main/projectx_api/enums.py)
 
 ## 📄 License
 
