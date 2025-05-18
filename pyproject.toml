@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projectx-api"
+version = "0.1.0"
+description = "Python API Client for interacting with the ProjectX trading API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Mickael Burguet" }
+]
+keywords = ["python", "rithmic"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "httpx>=0.21.0",
+    "pattern_kit>=2.0.0",
+    "signalrcore>=0.9.5"
+]
+
+[project.optional-dependencies]
+dev = ["check-manifest"]
+test = ["coverage", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/rundef/projectx-api"
+Repository = "https://github.com/rundef/projectx-api"
+Issues = "https://github.com/rundef/projectx-api/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
